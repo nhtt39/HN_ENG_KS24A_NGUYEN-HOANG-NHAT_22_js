@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let choice;
+        const prices = [];
+      do {
+        choice = +prompt("moi ban nhap yeu cau: 1 - them, 2 - sua, 3 - xoa, 4 - in, 5 - tinh tong, 6 - xoa toan bo, 0 - thoat");
+        switch (choice) {
+          case 1:
+            let priceInput = +prompt('moi ban nhap gia: ');
+            prices.push(priceInput);
+            alert('them gia thanh cong');
+            break;
+          case 2:
+            const indexEdit = +prompt('moi ban nhap vi tri');
+            const valueEdit = +prompt('nhap gia moi: ');
+            if(indexEdit < prices.length){
+                prices[indexEdit] = valueEdit;
+                alert('cap nhat gia thanh cong')
+            }else{
+                alert('vi tri khong hop le');
+            }
+            break;
+          case 3:
+            const indexDelete = +prompt('nhap vi tri can xoa');
+            if(indexDelete < prices.length){
+                prices.splice(indexDelete, 1)
+                alert('xoa thanh cong');
+            }else{
+                alert('vi tri khong hop le');
+            }
+            break;
+          case 4:
+            console.log('danh sach gia: ', prices);
+            break;
+          case 5:
+            let total = 0;
+            for (let i = 0; i < prices.length; i++) {
+                total += prices[i];
+            }
+            console.log('tong tien trong gio hang: ', total);
+            break;
+          case 6:
+            prices.length = 0;
+            alert('xoa toan bo thanh cong');
+            break;
+          case 0:
+            break;
+          default:
+            console.log('lua chon khong hop le');
+            break;
+        }
+      } while (choice !== 0);
+    </script>
+  </body>
+</html>
