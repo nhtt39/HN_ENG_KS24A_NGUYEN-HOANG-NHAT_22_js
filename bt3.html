@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let element = prompt(`Nhập 1 chuỗi số muốn đảo ngược: `);
+      let arr = element.split("");
+      if (!isNaN(element)) {
+        let reversed = arr.reverse().join("");
+        console.log(reversed);
+      } else {
+        console.log("Dãy không hợp lệ");
+      }
+    </script>
+  </body>
+</html>
